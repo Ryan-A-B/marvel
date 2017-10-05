@@ -3,12 +3,10 @@ import CharacterCard from "../Character/Card.jsx";
 
 function Characters ({ids}) {
     return (
-        <div className="row">
+        <div className="card-columns">
             {$.map(ids, function (id) {
                 return (
-                    <div className="col-sm-6 col-md-4 col-lg-3" key={id}>
-                        <CharacterCard id={id}/>
-                    </div>
+                    <CharacterCard id={id} key={id}/>
                 );
             })}
         </div>
