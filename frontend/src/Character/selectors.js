@@ -7,5 +7,5 @@ export const getCharacterDescription = (state, id) =>  getCharacter(state, id).d
 export const getCharacterThumbnail = (state, id) => {
     const {thumbnail} = getCharacter(state, id);
 
-    return [thumbnail.path, thumbnail.extension].join(".");
+    return `${thumbnail.path}/${Config.marvel.image.size}.${thumbnail.extension}`;
 }

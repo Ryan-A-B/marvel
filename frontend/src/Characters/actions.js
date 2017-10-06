@@ -9,10 +9,10 @@ function putCharacters (characters) {
     });
 }
 
-export function fetchCharacters (force = true) {
+export function fetchCharacters (force = false) {
     if (force || !store.getState().characters) {
         $.ajax({
-            url: Config.marvel.endpoint + "characters",
+            url: `${Config.marvel.endpoint}characters`,
             data: {apikey: Config.marvel.apikey},
             success: function (response) {
                 putCharacters(response.data.results);

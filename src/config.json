@@ -1,6 +1,0 @@
-{
-    "marvel": {
-        "endpoint": "https://gateway.marvel.com/v1/public/",
-        "apikey": "a2a839531c60d4edb0fd121b79137673"
-    }
-}
