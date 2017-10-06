@@ -1,9 +1,7 @@
 function Frame ({children}) {
     return (
         <div>
-            <div className="container">
-                {children}
-            </div>
+            {children}
         </div>
     );
 }

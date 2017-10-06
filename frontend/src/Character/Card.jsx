@@ -2,15 +2,14 @@ import * as Components from "./Components.jsx";
 
 function CharacterCard({id}) {
     return (
-        <Card.Container>
-            <Components.Thumbnail id={id} className="card-img-top"/>
+        <ReactRouter.Link to={"/character/" + id} className="card card-character" key={id}>
+            <Components.Thumbnail id={id}/>
             <Card.Body>
-                <Card.Title>
+                <Card.Title className="text-center">
                     <Components.Name id={id}/>
                 </Card.Title>
-                <Components.Description id={id}/>
             </Card.Body>
-        </Card.Container>
+        </ReactRouter.Link>
     );
 }
 

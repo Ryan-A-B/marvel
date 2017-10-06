@@ -1,4 +1,5 @@
 export const PUT_CHARACTERS = "PUT_CHARACTERS";
+export const SET_CHARACTER_SEARCH = "SET_CHARACTER_SEARCH";
 
 function putCharacters (characters) {
     store.dispatch({
@@ -11,12 +12,15 @@ function putCharacters (characters) {
 
 export function fetchCharacters (force = false) {
     if (force || !store.getState().characters) {
-        $.ajax({
-            url: `${Config.marvel.endpoint}characters`,
-            data: {apikey: Config.marvel.apikey},
-            success: function (response) {
-                putCharacters(response.data.results);
-            }
+        $.get("/characters.json", function (characters) {
+            putCharacters(characters);
         });
     }
+}
+
+export function setCharactersSearch (search) {
+    store.dispatch({
+        type: SET_CHARACTER_SEARCH,
+        search
+    });
 }

@@ -35,6 +35,7 @@ module.exports = {
             "moment": "moment",
             "numeral": "numeral",
 
+            "Input": "ryans-react-repository/dist/Input",
             "Card": "ryans-react-repository/dist/Card",
 
             "Config": path.resolve(SRC_DIR, 'config.json'),
