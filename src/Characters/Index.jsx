@@ -3,10 +3,12 @@ import CharacterCard from "../Character/Card.jsx";
 
 function Characters ({ids}) {
     return (
-        <div className="card-columns">
+        <div className="characters card-columns">
             {$.map(ids, function (id) {
                 return (
-                    <CharacterCard id={id} key={id}/>
+                    <ReactRouter.Link to={"/character/" + id} key={id}>
+                        <CharacterCard id={id}/>
+                    </ReactRouter.Link>
                 );
             })}
         </div>

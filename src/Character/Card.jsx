@@ -1,17 +1,17 @@
-import {getCharacter} from "./selectors.js";
+import * as Components from "./Components.jsx";
 
-function CharacterCard({character}) {
+function CharacterCard({id}) {
     return (
         <Card.Container>
+            <Components.Thumbnail id={id} className="card-img-top"/>
             <Card.Body>
-                {character.name}
+                <Card.Title>
+                    <Components.Name id={id}/>
+                </Card.Title>
+                <Components.Description id={id}/>
             </Card.Body>
         </Card.Container>
     );
 }
 
-function mapStateToProps (state, props) {
-    return {character: getCharacter(state,  props)};
-}
-
-export default ReactRedux.connect(mapStateToProps)(CharacterCard);
+export default CharacterCard;
