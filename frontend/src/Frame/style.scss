@@ -10,6 +10,14 @@
   }
 }
 
+.navbar-collapse {
+  padding: 0.5rem 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 0;
+  }
+}
+
 section#wrapper {
   margin-top: $spacer;
 }

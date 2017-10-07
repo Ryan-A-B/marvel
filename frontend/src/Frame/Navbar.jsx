@@ -6,17 +6,26 @@ function FrameNavbar (props) {
     }
 
     return (
-        <Navbar.Container className="sticky-top navbar-dark bg-red">
+        <Navbar.Container className="sticky-top navbar-expand-sm navbar-light bg-red">
             <div className="container">
                 <Navbar.Brand>
                     <img src="/marvel.svg" height="54"/>
                 </Navbar.Brand>
-                <Form.Form onSubmit={submit} className="form-inline">
-                    <CharacterSearch className="mr-sm-2" placeholder="Search"/>
-                    <Button.Submit className="btn-dark">
-                        Search
-                    </Button.Submit>
-                </Form.Form>
+                <Navbar.Toggle target="navbar-form"/>
+                <Navbar.Collapse id="navbar-form">
+                    <Form.Form onSubmit={submit} className="ml-auto">
+                        <div className="form-row">
+                            <div className="col">
+                                <CharacterSearch className="mr-sm-2" placeholder="Search"/>
+                            </div>
+                            <div className="col-auto">
+                                <Button.Submit className="btn-dark">
+                                    Search
+                                </Button.Submit>
+                            </div>
+                        </div>
+                    </Form.Form>
+                </Navbar.Collapse>
             </div>
         </Navbar.Container>
     );
