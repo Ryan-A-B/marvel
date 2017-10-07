@@ -43,11 +43,6 @@ class Characters extends React.Component {
 
         return (
             <div className="characters">
-                <Input.Text
-                    value={this.props.search}
-                    onChange={setCharactersSearch}
-                    placeholder="Search"
-                />
                 <div className="card-deck">
                     {$.map(ids, (id) => <CharacterCard id={id} key={id}/>)}
                 </div>
@@ -57,10 +52,7 @@ class Characters extends React.Component {
 }
 
 function mapStateToProps (state) {
-    return {
-        search: getSearch(state),
-        ids: getFilteredCharacterIds(state)
-    };
+    return {ids: getFilteredCharacterIds(state)};
 }
 
 export default ReactRedux.connect(mapStateToProps)(Characters);

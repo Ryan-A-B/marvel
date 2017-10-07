@@ -36,6 +36,9 @@ module.exports = {
             "numeral": "numeral",
 
             "Input": "ryans-react-repository/dist/Input",
+            "Navbar": "ryans-react-repository/dist/Navbar",
+            "Button": "ryans-react-repository/dist/Button",
+            "Form": "ryans-react-repository/dist/Form",
             "Card": "ryans-react-repository/dist/Card",
 
             "Config": path.resolve(SRC_DIR, 'config.json'),

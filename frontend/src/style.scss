@@ -1,7 +1,14 @@
 $fa-font-path: "/assets/fonts";
 
+$red: #e23636;
+$black: #000000;
+$gray: #504a4a;
+$blue: #518cca;
+$orange: #f78f3f;
+
 @import "~font-awesome/scss/font-awesome";
 @import "~bootstrap/scss/bootstrap";
 
+@import "Frame/style.scss";
 @import "Characters/style.scss";
 @import "Character/style.scss";

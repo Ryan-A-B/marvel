@@ -1,8 +1,13 @@
+import FrameNavbar from "./Navbar.jsx";
+
 function Frame ({children}) {
     return (
-        <div>
-            {children}
-        </div>
+        <section id="frame">
+            <FrameNavbar/>
+            <div>
+                {children}
+            </div>
+        </section>
     );
 }
 

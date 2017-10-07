@@ -2,7 +2,18 @@
   min-width: 240px;
   margin-bottom: $spacer;
 
+  .card-img-top {
+    filter: sepia(90%);
+    transition: 0.4s filter;
+  }
+
   .card-title {
     margin: 0;
+  }
+
+  &:hover {
+    .card-img-top {
+        filter: sepia(0%);
+    }
   }
 }

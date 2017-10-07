@@ -3,7 +3,7 @@ import * as Components from "./Components.jsx";
 function CharacterCard({id}) {
     return (
         <ReactRouter.Link to={"/character/" + id} className="card card-character" key={id}>
-            <Components.Thumbnail id={id}/>
+            <Components.Thumbnail id={id} className="card-img-top"/>
             <Card.Body>
                 <Card.Title className="text-center">
                     <Components.Name id={id}/>

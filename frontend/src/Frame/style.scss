@@ -1,0 +1,19 @@
+.navbar {
+  margin-bottom: $spacer;
+}
+
+.navbar-brand {
+  margin: {
+    top: -0.5rem;
+    bottom: -0.5rem;
+  }
+
+  padding: {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.bg-dark {
+  background-color: $black !important;
+}
