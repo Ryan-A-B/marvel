@@ -9,7 +9,7 @@ function putCharacter (character) {
 
 export function fetchCharacter (id) {
     $.ajax({
-        url: `${Config.marvel.endpoint}characters/${id}`,
+        url: `${Config.marvel.endpoint}/characters/${id}`,
         data: {apikey: Config.marvel.apikey},
         success: function (response) {
             putCharacter(response.data.results[0]);

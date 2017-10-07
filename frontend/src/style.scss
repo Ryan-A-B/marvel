@@ -15,6 +15,9 @@ $border-radius: 0;
 @import "Characters/style.scss";
 @import "Character/style.scss";
 
+.btn {cursor: pointer;}
+.bg-red {background-color: $red !important;}
+
 .background {
   position: fixed;
   top: 0;
@@ -32,8 +35,4 @@ $border-radius: 0;
     background-color: $orange;
     border-color: $orange;
   }
-}
-
-.bg-red {
-  background-color: $red !important;
 }

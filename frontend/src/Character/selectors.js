@@ -10,3 +10,24 @@ export const getCharacterThumbnail = (state, id) => {
 
     return `${thumbnail.path}/${Config.marvel.image.size}.${thumbnail.extension}`;
 }
+
+export function makeGetCharacterComics () {
+    const regex = /\d+$/;
+    const getCharacterComics = (state, id) => getCharacter(state, id).comics.items;
+
+    return Reselect.createSelector(
+        [getCharacterComics],
+        (comics) => {
+            return lodash.reduce(comics, function (list, comic) {
+                try {
+                    const id = comic.resourceURI.match(regex)[0];
+
+                    list.push({id, ...comic});
+                    return list;
+                } catch (e) {
+                    return list;
+                }
+            }, []);
+        }
+    );
+}

@@ -39,10 +39,12 @@ module.exports = {
             "Navbar": "ryans-react-repository/dist/Navbar",
             "Button": "ryans-react-repository/dist/Button",
             "Form": "ryans-react-repository/dist/Form",
+            "Modal": "ryans-react-repository/dist/Modal",
             "Card": "ryans-react-repository/dist/Card",
 
             "Config": path.resolve(SRC_DIR, 'config.json'),
-            "Actions": path.resolve(SRC_DIR, 'actions.js')
+            "Actions": path.resolve(SRC_DIR, 'actions.js'),
+            "Const": path.resolve(SRC_DIR, 'const.js')
         }),
         new ExtractTextPlugin("style.css")
     ]

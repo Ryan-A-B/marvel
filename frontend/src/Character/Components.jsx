@@ -1,6 +1,8 @@
 import {
-    getCharacterThumbnail, getCharacterName, getCharacterDescription, getCharacterUrls
+    getCharacterThumbnail, getCharacterName, getCharacterDescription,
+    getCharacterUrls, makeGetCharacterComics
 } from "./selectors";
+import Comic from "../Comic/Link.jsx";
 
 export const Thumbnail = (function () {
     const Component = function ({dispatch, ...attributes}) {
@@ -69,11 +71,33 @@ export const Urls = (function () {
         const {id} = props;
 
         return {urls: getCharacterUrls(state, id)};
-    }
+    };
 
     const mergeProps = (stateProps, dispatchProps, ownProps) => {
         return Object.assign({}, stateProps, ownProps);
     };
 
     return ReactRedux.connect(mapStateToProps, undefined, mergeProps)(Component);
+})();
+
+export const AppearsIn = (function () {
+    const Component = function (props) {
+        return (
+            <ul>
+                {lodash.map(props.comics, (comic) => <li key={comic.id}><Comic {...comic}/></li>)}
+            </ul>
+        );
+    };
+
+    const makeMapStateToProps = () => {
+        const getCharacterComics = makeGetCharacterComics();
+
+        return (state, props) => {
+            const {id} = props;
+
+            return {comics: getCharacterComics(state, id)};
+        };
+    };
+
+    return ReactRedux.connect(makeMapStateToProps)(Component);
 })();

@@ -24,6 +24,7 @@ class Index extends React.Component {
                         <Components.Description id={id} className=""/>
                     </div>
                 </div>
+                <Components.AppearsIn id={id}/>
             </section>
         );
     }
