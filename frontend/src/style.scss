@@ -6,9 +6,22 @@ $gray: #504a4a;
 $blue: #518cca;
 $orange: #f78f3f;
 
+$border-radius: 0;
+
 @import "~font-awesome/scss/font-awesome";
 @import "~bootstrap/scss/bootstrap";
 
 @import "Frame/style.scss";
 @import "Characters/style.scss";
 @import "Character/style.scss";
+
+.btn-dark {
+  &:hover {
+    background-color: $orange;
+    border-color: $orange;
+  }
+}
+
+.bg-red {
+  background-color: $red !important;
+}

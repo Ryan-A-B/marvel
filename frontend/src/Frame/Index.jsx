@@ -4,9 +4,9 @@ function Frame ({children}) {
     return (
         <section id="frame">
             <FrameNavbar/>
-            <div>
+            <section id="wrapper">
                 {children}
-            </div>
+            </section>
         </section>
     );
 }

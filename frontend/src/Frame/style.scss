@@ -1,7 +1,3 @@
-.navbar {
-  margin-bottom: $spacer;
-}
-
 .navbar-brand {
   margin: {
     top: -0.5rem;
@@ -14,6 +10,6 @@
   }
 }
 
-.bg-dark {
-  background-color: $black !important;
+section#wrapper {
+  margin-top: $spacer;
 }

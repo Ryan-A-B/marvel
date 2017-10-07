@@ -6,14 +6,14 @@ function FrameNavbar (props) {
     }
 
     return (
-        <Navbar.Container className="navbar-dark bg-dark">
+        <Navbar.Container className="sticky-top navbar-dark bg-red">
             <div className="container">
                 <Navbar.Brand>
                     <img src="/marvel.svg" height="54"/>
                 </Navbar.Brand>
                 <Form.Form onSubmit={submit} className="form-inline">
-                    <CharacterSearch placeholder="Search"/>
-                    <Button.Submit>
+                    <CharacterSearch className="mr-sm-2" placeholder="Search"/>
+                    <Button.Submit className="btn-dark">
                         Search
                     </Button.Submit>
                 </Form.Form>

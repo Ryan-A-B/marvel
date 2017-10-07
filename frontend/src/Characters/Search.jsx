@@ -8,6 +8,6 @@ function mapStateToProps (state) {
     };
 }
 
-const mergeProps = (stateProps) => Object.assign({}, stateProps);
+const mergeProps = (stateProps, dispatchProps, ownProps) => Object.assign({}, stateProps, ownProps);
 
 export default ReactRedux.connect(mapStateToProps, undefined, mergeProps)(Input.Text);
