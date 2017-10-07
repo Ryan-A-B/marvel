@@ -3,7 +3,12 @@ section#character {
   @extend .bg-light;
 
   margin-top: -$spacer;
-  padding-top: $spacer;
+  padding: {
+    top: $spacer;
+    bottom: $spacer;
+  }
+
+  h3 {margin-bottom: $spacer;}
 }
 
 .card-character {
