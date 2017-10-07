@@ -2,6 +2,7 @@ section#character {
   @extend .container;
   @extend .bg-light;
 
+  margin-top: -$spacer;
   padding-top: $spacer;
 }
 

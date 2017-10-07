@@ -17,7 +17,7 @@ class Characters extends React.Component {
     }
 
     componentDidMount () {
-        $(window).on('scroll', this.onScroll);
+        $("#wrapper").on('scroll', this.onScroll);
     }
 
     componentWillReceiveProps () {
@@ -26,15 +26,15 @@ class Characters extends React.Component {
 
     reset () {
         this.setState({length: 24});
-        $(window).scrollTop(0);
+        $("#wrapper").scrollTop(0);
     }
 
     onScroll () {
-        const documentHeight = $(document).height();
-        const windowHeight = $(window).height();
-        const scrollPosition = $('body').scrollTop();
+        const pageHeight = $("#page").height();
+        const wrapperHeight = $("#wrapper").height();
+        const scrollPosition = $('#wrapper').scrollTop();
 
-        const offset = documentHeight - (windowHeight + scrollPosition);
+        const offset = pageHeight - (wrapperHeight + scrollPosition);
 
         const {length} = this.state;
         if (offset < 150 && length < this.props.ids.length) {

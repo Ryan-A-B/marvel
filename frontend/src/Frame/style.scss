@@ -1,6 +1,5 @@
 .navbar {
   flex-shrink: 0;
-  margin-bottom: $spacer;
 }
 
 .navbar-brand {
@@ -34,6 +33,11 @@ section#wrapper, section#page {
 
 section#frame {
   height: 100vh;
+}
+
+section#wrapper {
+  padding-top: $spacer;
+  overflow-y: auto;
 }
 
 section#footer {

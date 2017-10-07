@@ -19,9 +19,9 @@ class Index extends React.Component {
                     <div className="col-md-6 col-lg-4 col-xl-3">
                         <CharacterCard id={id}/>
                     </div>
-                    <div className="col d-flex flex-column">
+                    <div className="col">
+                        <Components.Urls id={id}/>
                         <Components.Description id={id} className=""/>
-                        <Components.Urls id={id} className="mt-auto"/>
                     </div>
                 </div>
             </section>
