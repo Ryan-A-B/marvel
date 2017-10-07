@@ -11,11 +11,9 @@ function putCharacters (characters) {
 }
 
 export function fetchCharacters (force = false) {
-    if (force || !store.getState().characters) {
-        $.get("/characters.json", function (characters) {
-            putCharacters(characters);
-        });
-    }
+    $.get("/characters.json", function (characters) {
+        putCharacters(characters);
+    });
 }
 
 export function setCharactersSearch (search) {

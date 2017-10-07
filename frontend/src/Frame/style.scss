@@ -40,6 +40,10 @@ section#wrapper {
   overflow-y: auto;
 }
 
+section#page {
+  margin-bottom: $spacer;
+}
+
 section#footer {
   @extend .bg-light;
 }

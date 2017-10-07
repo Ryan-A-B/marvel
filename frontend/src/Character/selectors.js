@@ -13,7 +13,13 @@ export const getCharacterThumbnail = (state, id) => {
 
 export function makeGetCharacterComics () {
     const regex = /\d+$/;
-    const getCharacterComics = (state, id) => getCharacter(state, id).comics.items;
+    const getCharacterComics = (state, id) => {
+        try {
+            return getCharacter(state, id).comics.items;
+        } catch (e) {
+            return null;
+        }
+    };
 
     return Reselect.createSelector(
         [getCharacterComics],

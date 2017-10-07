@@ -46,7 +46,9 @@ export const Description = (function () {
 
 export const Urls = (function () {
     const Component = function ({urls, className, ...attributes}) {
-        if (!urls) return null;
+        if (!urls) {
+            return <div className="text-center"><i className="fa fa-spinner fa-spin"/></div>;
+        }
 
         Object.assign(attributes, {
             className: "form-row " + (className || "")
@@ -82,12 +84,21 @@ export const Urls = (function () {
 
 export const AppearsIn = (function () {
     const Component = function (props) {
-        return (
-            <div>
-                <h3 className="text-center">Appears In</h3>
+        if (props.comics && !props.comics.length) return null;
+
+        var comics = <div className="text-center"><i className="fa fa-spinner fa-spin"/></div>;
+        if (props.comics) {
+            comics = (
                 <div className="card-columns">
                     {lodash.map(props.comics, (comic) => <Comic {...comic} key={comic.id}/>)}
                 </div>
+            );
+        }
+
+        return (
+            <div>
+                <h3 className="text-center">Appears In</h3>
+                {comics}
             </div>
         );
     };
