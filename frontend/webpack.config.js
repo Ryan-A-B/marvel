@@ -15,7 +15,7 @@ module.exports = {
             {test: /\.jsx?$/, include: SRC_DIR, loader: "babel-loader"},
             {test: /\.scss$/, loader: ExtractTextPlugin.extract({
                 fallback: "style-loader",
-                use: "css-loader!sass-loader!postcss-loader"
+                use: "css-loader!postcss-loader!sass-loader"
             })}
         ]
     },
