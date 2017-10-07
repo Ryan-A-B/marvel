@@ -32,8 +32,9 @@ class Characters extends React.Component {
 
         const offset = documentHeight - (windowHeight + scrollPosition);
 
-        if (offset < 150) {
-            this.setState({length: this.state.length + 12});
+        const {length} = this.state;
+        if (offset < 150 && length < this.props.ids.length) {
+            this.setState({length: length + 12});
         }
     }
 
