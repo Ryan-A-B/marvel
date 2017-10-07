@@ -15,7 +15,7 @@ $border-radius: 0;
 @import "Characters/style.scss";
 @import "Character/style.scss";
 
-.btn {cursor: pointer;}
+.btn, *[role=button] {cursor: pointer;}
 .bg-red {background-color: $red !important;}
 
 .background {

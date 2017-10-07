@@ -83,9 +83,12 @@ export const Urls = (function () {
 export const AppearsIn = (function () {
     const Component = function (props) {
         return (
-            <ul>
-                {lodash.map(props.comics, (comic) => <li key={comic.id}><Comic {...comic}/></li>)}
-            </ul>
+            <div>
+                <h3 className="text-center">Appears In</h3>
+                <div className="card-columns">
+                    {lodash.map(props.comics, (comic) => <Comic {...comic} key={comic.id}/>)}
+                </div>
+            </div>
         );
     };
 

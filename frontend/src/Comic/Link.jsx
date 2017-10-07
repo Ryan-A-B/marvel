@@ -11,9 +11,11 @@ class Comic extends React.Component {
         const {name} = this.props;
 
         return (
-            <Button.Button className="btn-link" onClick={this.onClick}>
-                {name}
-            </Button.Button>
+            <Card.Container role="button" onClick={this.onClick}>
+                <Card.Body>
+                    {name}
+                </Card.Body>
+            </Card.Container>
         );
     }
 }
