@@ -1,3 +1,16 @@
 .characters {
   @extend .container;
+
+  .card-character {
+    .card-img-top {
+      filter: saturate(50%);
+      transition: 0.5s filter;
+    }
+
+    &:hover {
+      .card-img-top {
+          filter: saturate(150%);
+      }
+    }
+  }
 }

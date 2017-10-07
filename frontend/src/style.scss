@@ -15,6 +15,17 @@ $border-radius: 0;
 @import "Characters/style.scss";
 @import "Character/style.scss";
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  filter: sepia(100%);
+}
+
 .btn-dark {
   &:hover {
     background-color: $orange;

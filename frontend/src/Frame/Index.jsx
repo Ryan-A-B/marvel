@@ -7,6 +7,7 @@ function Frame ({children}) {
             <section id="wrapper">
                 {children}
             </section>
+            <img src="/background.jpg" className="background"/>
         </section>
     );
 }
