@@ -1,8 +1,10 @@
 *.swp
 
+push
 node_modules
 src/js/library
 
 public/style.css
+public/style.css.map
 public/script.js
 public/script.js.map

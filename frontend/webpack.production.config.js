@@ -1,7 +1,8 @@
-const  webpack = require("webpack");
+const webpack = require("webpack");
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var OUT_DIR = path.resolve(__dirname, "public/assets/js");
+var OUT_DIR = path.resolve(__dirname, "public");
 var SRC_DIR = path.resolve(__dirname, "src");
 
 module.exports = {
@@ -11,7 +12,10 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.jsx?$/, include: SRC_DIR, loader: "babel-loader"},
-            {test: /\.scss$/, loader: "style-loader!css-loader!sass-loader"}
+            {test: /\.scss$/, loader: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: "css-loader!postcss-loader!sass-loader"
+            })}
         ]
     },
     plugins: [
@@ -30,8 +34,18 @@ module.exports = {
             "moment": "moment",
             "numeral": "numeral",
 
-            "Actions": path.resolve(SRC_DIR, 'actions.js')
+            "Input": "ryans-react-repository/dist/Input",
+            "Navbar": "ryans-react-repository/dist/Navbar",
+            "Button": "ryans-react-repository/dist/Button",
+            "Form": "ryans-react-repository/dist/Form",
+            "Modal": "ryans-react-repository/dist/Modal",
+            "Card": "ryans-react-repository/dist/Card",
+
+            "Config": path.resolve(SRC_DIR, 'config.json'),
+            "Actions": path.resolve(SRC_DIR, 'actions.js'),
+            "Const": path.resolve(SRC_DIR, 'const.js')
         }),
+        new ExtractTextPlugin("style.css"),
         new webpack.DefinePlugin({"process.env": {"NODE_ENV": JSON.stringify("production")}}),
         new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
     ]
