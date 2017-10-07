@@ -1,4 +1,6 @@
-import {getCharacterThumbnail, getCharacterName, getCharacterDescription} from "./selectors";
+import {
+    getCharacterThumbnail, getCharacterName, getCharacterDescription, getCharacterUrls
+} from "./selectors";
 
 export const Thumbnail = (function () {
     const Component = function ({dispatch, ...attributes}) {
@@ -38,4 +40,40 @@ export const Description = (function () {
     };
 
     return ReactRedux.connect(mapStateToProps)(Component);
+})();
+
+export const Urls = (function () {
+    const Component = function ({urls, className, ...attributes}) {
+        if (!urls) return null;
+
+        Object.assign(attributes, {
+            className: "form-row " + (className || "")
+        });
+
+        return (
+            <div {...attributes}>
+                {lodash.map(urls, function ({type, url}) {
+                    return (
+                        <div className="col form-group" key={type}>
+                            <a href={url} target="_blank" className="btn btn-dark btn-block">
+                                {type}
+                            </a>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    const mapStateToProps = (state, props) => {
+        const {id} = props;
+
+        return {urls: getCharacterUrls(state, id)};
+    }
+
+    const mergeProps = (stateProps, dispatchProps, ownProps) => {
+        return Object.assign({}, stateProps, ownProps);
+    };
+
+    return ReactRedux.connect(mapStateToProps, undefined, mergeProps)(Component);
 })();

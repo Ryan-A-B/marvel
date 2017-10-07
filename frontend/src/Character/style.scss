@@ -1,8 +1,23 @@
+section#character {
+  @extend .container;
+  @extend .bg-light;
+
+  padding-top: $spacer;
+}
+
 .card-character {
+  @extend .bg-dark;
+
   min-width: 240px;
   margin-bottom: $spacer;
+  color: $white;
 
   .card-title {
     margin: 0;
+  }
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
   }
 }

@@ -6,7 +6,7 @@ function FrameNavbar (props) {
     }
 
     return (
-        <Navbar.Container className="sticky-top navbar-expand-sm navbar-light bg-red">
+        <Navbar.Container className="navbar-expand-sm navbar-light bg-red">
             <div className="container">
                 <Navbar.Brand>
                     <img src="/marvel.svg" height="54"/>

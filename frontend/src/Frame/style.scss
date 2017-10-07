@@ -1,3 +1,8 @@
+.navbar {
+  flex-shrink: 0;
+  margin-bottom: $spacer;
+}
+
 .navbar-brand {
   margin: {
     top: -0.5rem;
@@ -18,6 +23,19 @@
   }
 }
 
-section#wrapper {
-  margin-top: $spacer;
+section#frame, section#wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+section#wrapper, section#page {
+  flex-grow: 1;
+}
+
+section#frame {
+  height: 100vh;
+}
+
+section#footer {
+  @extend .bg-light;
 }

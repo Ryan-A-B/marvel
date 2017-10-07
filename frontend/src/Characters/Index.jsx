@@ -12,6 +12,10 @@ class Characters extends React.Component {
         this.onScroll = this.onScroll.bind(this);
     }
 
+    componentWillMount () {
+        document.title = "Marvel Characters"
+    }
+
     componentDidMount () {
         $(window).on('scroll', this.onScroll);
     }

@@ -1,6 +1,6 @@
 $fa-font-path: "/assets/fonts";
 
-$red: #e23636;
+$red: #ed1d24;
 $black: #000000;
 $gray: #504a4a;
 $blue: #518cca;
@@ -22,6 +22,7 @@ $border-radius: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  object-fit: cover;
 
   filter: sepia(100%);
 }
